@@ -1,1 +1,11 @@
-target/
+#Mac
+.DS_Store
+
+# Eclipse
+.classpath
+.settings/
+.project
+
+# Maven
+/target
+/logs

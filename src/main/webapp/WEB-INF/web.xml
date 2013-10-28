@@ -11,7 +11,7 @@
   </welcome-file-list>
    <servlet>
     <servlet-name>TripleGeoServlet</servlet-name>
-    <servlet-class>TripleGeoRun</servlet-class>
+    <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoRun</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TripleGeoServlet</servlet-name>
@@ -19,15 +19,15 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>TripleGeoRun</servlet-name>
-    <servlet-class>TripleGeoRun</servlet-class>
+    <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoRun</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>TripleGeoReview</servlet-name>
-    <servlet-class>TripleGeoReview</servlet-class>
+    <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoReview</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoadFile</servlet-name>
-    <servlet-class>LoadFile</servlet-class>
+    <servlet-class>org.linkeddata.stack.service.triplegeo.LoadFile</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TripleGeoRun</servlet-name>
