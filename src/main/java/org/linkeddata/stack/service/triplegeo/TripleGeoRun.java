@@ -93,7 +93,7 @@ public class TripleGeoRun extends HttpServlet {
     	System.out.println("Starting job: "+request.getParameter("job"));
     	
     	if(request.getParameter("job").equals("example")){
-    		outputParams[2] = filePath+request.getParameter("inputFile");
+    		outputParams[2] = filePath+"examples/"+request.getParameter("inputFile");
     		outputParams[3] = filePath+  TripleGeoRun.resultDir + "/result."+fileEXT;
     		outputParams[4] = request.getParameter("format");
     		outputParams[5] = request.getParameter("targetStore");
