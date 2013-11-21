@@ -85,7 +85,7 @@ public class ImportRDF extends HttpServlet {
  	            
  	            RDFReader reader = model.getReader( modelType );
  				reader.read(model, source);
- 				System.out.println(model.toString());
+ 				
  				int inserted = httpUpdate(endpoint, graph, model);
  				res.setStatus("SUCESS");
  				res.setMessage("Data Imported "+ inserted+ " triples");
@@ -174,6 +174,8 @@ public class ImportRDF extends HttpServlet {
 				tmpModel.write(os, "N-TRIPLES");
 				String queryString = "INSERT {  " + os.toString() + "}";
 				os.close();
+				
+//				System.out.println(queryString);
 				
 				HttpSPARQLUpdate p = new HttpSPARQLUpdate();
 		        p.setEndpoint(endpoint);
