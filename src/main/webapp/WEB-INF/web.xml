@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>TripleGeoServlet</display-name>
+  <display-name>TripleGeo-Service</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -29,6 +29,10 @@
     <servlet-name>LoadFile</servlet-name>
     <servlet-class>org.linkeddata.stack.service.triplegeo.LoadFile</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ImportRDF</servlet-name>
+    <servlet-class>org.linkeddata.stack.service.triplegeo.ImportRDF</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>TripleGeoRun</servlet-name>
     <url-pattern>/TripleGeoRun</url-pattern>
@@ -40,5 +44,9 @@
   <servlet-mapping>
     <servlet-name>LoadFile</servlet-name>
     <url-pattern>/LoadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImportRDF</servlet-name>
+    <url-pattern>/ImportRDF</url-pattern>
   </servlet-mapping>
 </web-app>
