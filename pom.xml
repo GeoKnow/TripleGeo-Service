@@ -4,9 +4,8 @@
 
     <groupId>stack.linkeddata.org</groupId>
     <artifactId>TripleGeo-Service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>war</packaging>
-
     <name>TripleGeo-Service</name>
 
     <properties>
@@ -66,7 +65,8 @@
 
     </dependencies>
 
-      <build>
+   <build>
+    <finalName>TripleGeo-Service</finalName>
     <plugins>
       <!-- Maven Tomcat Plugin -->
       <plugin>
