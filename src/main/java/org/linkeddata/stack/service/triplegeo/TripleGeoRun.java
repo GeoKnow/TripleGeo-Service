@@ -129,8 +129,9 @@ public class TripleGeoRun extends HttpServlet {
             
             if(request.getParameter("job").equals("db")){
                     System.out.println(request.getParameter("dbType"));
-                    outputParams[1] = filePath+"result/result."+fileEXT;
-                    outputParams[2] = request.getParameter("targetStore");
+                    outputParams[3] = filePath+"result/result."+fileEXT;
+                    outputParams[4] = request.getParameter("format");
+                    outputParams[5] = request.getParameter("targetStore");
                     
                     dbParams[0] = request.getParameter("dbType");
                     dbParams[1] = request.getParameter("dbName");
@@ -161,7 +162,7 @@ public class TripleGeoRun extends HttpServlet {
     public static void writeShpConfig(){
                             try {
                                         String content = 
-                                                                         "tmpDir = "+outputParams[1]+"  "
+                                                                     "tmpDir = "+outputParams[1]+"  "
                                                                    + "inputFile = "+outputParams[2]+"  "
                                                                    + "outputFile = "+outputParams[3]+"  "
                                                                    + "format = "+outputParams[4]+"  "
@@ -207,8 +208,7 @@ public class TripleGeoRun extends HttpServlet {
             try {
                      
                         String content = 
-                                                         "tmpDir = "+outputParams[1]+"  "
-                                                   + "inputFile = "+outputParams[2]+"  "
+                                                     "tmpDir = "+outputParams[1]+"  "
                                                    + "outputFile = "+outputParams[3]+"  "
                                                    + "format = "+outputParams[4]+"  "
                                                    + "targetStore = "+outputParams[5]+"  "
