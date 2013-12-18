@@ -52,7 +52,7 @@ public class LoadFile extends HttpServlet {
             }
     
     private void readConfig(String configFile){
-            
+            System.out.println(configFile);
             BufferedReader br = null;
              
                 try {
