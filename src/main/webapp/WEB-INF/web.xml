@@ -10,11 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
    <servlet>
-    <servlet-name>TripleGeoServlet</servlet-name>
+    <servlet-name>TripleGeo-Service</servlet-name>
     <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoRun</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TripleGeoServlet</servlet-name>
+    <servlet-name>TripleGeo-Service</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <servlet>
