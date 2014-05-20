@@ -33,7 +33,7 @@ public class TripleGeoRun extends HttpServlet {
         static String defaultLang;
         static String fileEXT;
 
-           public void init( ){
+        public void init( ){
         	  filePath = getServletContext().getRealPath(File.separator);
         	  filePath = filePath.replace("\\", "/");
               configFile = filePath+"config/config.conf";
@@ -49,8 +49,7 @@ public class TripleGeoRun extends HttpServlet {
               if (!configDir.exists()) {
             	  configDir.mkdirs();
               }
-              
-           }
+        }
 
         /**
          * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -162,23 +161,23 @@ public class TripleGeoRun extends HttpServlet {
     public static void writeShpConfig(){
                             try {
                                         String content = 
-                                                                     "tmpDir = "+outputParams[1]+"  "
-                                                                   + "inputFile = "+outputParams[2]+"  "
-                                                                   + "outputFile = "+outputParams[3]+"  "
-                                                                   + "format = "+outputParams[4]+"  "
-                                                                   + "targetStore = "+outputParams[5]+"  "
-                                                                   + "featureString = "+dataParams[0]+"  "
-                                                                   + "attribute = "+dataParams[1]+"  "
-                                                                   + "ignore = "+dataParams[2]+"  "
-                                                                   + "type = "+dataParams[3]+"  "
-                                                                   + "name = "+dataParams[4]+"  "
-                                                                   + "class = "+dataParams[5]+"  "
-                                                                   + "nsPrefix = "+NSParams[0]+"  "
-                                                                   + "nsURI = "+NSParams[1]+"  "
-                                                                   + "ontologyNSPrefix = "+NSParams[2]+"  "
-                                                                   + "ontologyNS = "+NSParams[3]+"  "
-                                                                   + "sourceRS = "+RSParams[0]+"  "
-                                                                   + "targetRS = "+RSParams[1]+"  "
+                                                                     "tmpDir = "+outputParams[1]+"/n"
+                                                                   + "inputFile = "+outputParams[2]+"/n"
+                                                                   + "outputFile = "+outputParams[3]+"/n"
+                                                                   + "format = "+outputParams[4]+"/n"
+                                                                   + "targetStore = "+outputParams[5]+"/n"
+                                                                   + "featureString = "+dataParams[0]+"/n"
+                                                                   + "attribute = "+dataParams[1]+"/n"
+                                                                   + "ignore = "+dataParams[2]+"/n"
+                                                                   + "type = "+dataParams[3]+"/n"
+                                                                   + "name = "+dataParams[4]+"/n"
+                                                                   + "class = "+dataParams[5]+"/n"
+                                                                   + "nsPrefix = "+NSParams[0]+"/n"
+                                                                   + "nsURI = "+NSParams[1]+"/n"
+                                                                   + "ontologyNSPrefix = "+NSParams[2]+"/n"
+                                                                   + "ontologyNS = "+NSParams[3]+"/n"
+                                                                   + "sourceRS = "+RSParams[0]+"/n"
+                                                                   + "targetRS = "+RSParams[1]+"/n"
                                                                    + "defaultLang = "+defaultLang;
                  
                                         File file = new File(configFile);
@@ -190,7 +189,7 @@ public class TripleGeoRun extends HttpServlet {
                                         FileWriter fw = new FileWriter(file.getAbsoluteFile());
                                         BufferedWriter bw = new BufferedWriter(fw);
                                         
-                                        String[] lines = content.split("  ");
+                                        String[] lines = content.split("/n");
                                     for (String line: lines) {
                                             if(!line.toLowerCase().contains("null")){
                                                     bw.write(line);
@@ -208,30 +207,30 @@ public class TripleGeoRun extends HttpServlet {
             try {
                      
                         String content = 
-                                                     "tmpDir = "+outputParams[1]+"  "
-                                                   + "outputFile = "+outputParams[3]+"  "
-                                                   + "format = "+outputParams[4]+"  "
-                                                   + "targetStore = "+outputParams[5]+"  "
-                                                   + "dbType = "+dbParams[0]+"  "
-                                                   + "dbName = "+dbParams[1]+"  "
-                                                   + "dbUserName = "+dbParams[2]+"  "
-                                                   + "dbPassword = "+dbParams[3]+"  "
-                                                   + "dbHost = "+dbParams[4]+"  "
-                                                   + "dbPort = "+dbParams[5]+"  "
-                                                   + "resourceName = "+dbParams[6]+"  "
-                                                   + "tableName = "+dbParams[7]+"  "
-                                                   + "condition = "+dbParams[8]+"  "
-                                                   + "labelColumnName = "+dbParams[9]+"  "
-                                                   + "nameColumnName = "+dbParams[10]+"  "
-                                                   + "classColumnName = "+dbParams[11]+"  "
-                                                   + "geometryColumnName = "+dbParams[12]+"  "
-                                                   + "ignore = "+dbParams[13]+"  "
-                                                   + "nsPrefix = "+NSParams[0]+"  "
-                                                   + "nsURI = "+NSParams[1]+"  "
-                                                   + "ontologyNSPrefix = "+NSParams[2]+"  "
-                                                   + "ontologyNS = "+NSParams[3]+"  "
-                                                   + "sourceRS = "+RSParams[0]+"  "
-                                                   + "targetRS = "+RSParams[1]+"  "
+                                                     "tmpDir = "+outputParams[1]+"/n"
+                                                   + "outputFile = "+outputParams[3]+"/n"
+                                                   + "format = "+outputParams[4]+"/n"
+                                                   + "targetStore = "+outputParams[5]+"/n"
+                                                   + "dbType = "+dbParams[0]+"/n"
+                                                   + "dbName = "+dbParams[1]+"/n"
+                                                   + "dbUserName = "+dbParams[2]+"/n"
+                                                   + "dbPassword = "+dbParams[3]+"/n"
+                                                   + "dbHost = "+dbParams[4]+"/n"
+                                                   + "dbPort = "+dbParams[5]+"/n"
+                                                   + "resourceName = "+dbParams[6]+"/n"
+                                                   + "tableName = "+dbParams[7]+"/n"
+                                                   + "condition = "+dbParams[8]+"/n"
+                                                   + "labelColumnName = "+dbParams[9]+"/n"
+                                                   + "nameColumnName = "+dbParams[10]+"/n"
+                                                   + "classColumnName = "+dbParams[11]+"/n"
+                                                   + "geometryColumnName = "+dbParams[12]+"/n"
+                                                   + "ignore = "+dbParams[13]+"/n"
+                                                   + "nsPrefix = "+NSParams[0]+"/n"
+                                                   + "nsURI = "+NSParams[1]+"/n"
+                                                   + "ontologyNSPrefix = "+NSParams[2]+"/n"
+                                                   + "ontologyNS = "+NSParams[3]+"/n"
+                                                   + "sourceRS = "+RSParams[0]+"/n"
+                                                   + "targetRS = "+RSParams[1]+"/n"
                                                    + "defaultLang = "+defaultLang;
  
                         File file = new File(configFile);
@@ -243,7 +242,7 @@ public class TripleGeoRun extends HttpServlet {
                         FileWriter fw = new FileWriter(file.getAbsoluteFile());
                         BufferedWriter bw = new BufferedWriter(fw);
                         
-                        String[] lines = content.split("  ");
+                        String[] lines = content.split("/n");
                     for (String line: lines) {
                             if(!line.toLowerCase().contains("null")){
                                     bw.write(line);

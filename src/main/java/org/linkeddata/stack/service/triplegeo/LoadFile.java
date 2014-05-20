@@ -69,11 +69,13 @@ public class LoadFile extends HttpServlet {
                         
                         for(int i=0; i<configList.size(); i++){
                                 if(!configList.get(i).toString().substring(0, 1).equals("#")){
-                                        String[]parts = configList.get(i).split("=");
-                                        System.out.println(configList.get(i));
-                                        parts[0] = parts[0].trim();
-                                        if(parts.length>1){
-                                        	parts[1] = parts[1].trim();
+                                        String[]partsArray = configList.get(i).split("=");
+                                        String[]parts = new String[2];
+                                        parts[0] = partsArray[0].trim();
+                                        if(partsArray.length>1){
+                                        	parts[1] = partsArray[1].trim();
+                                        }else{
+                                        	parts[1] = "";
                                         }
                                         config.add(parts);
                                 }
