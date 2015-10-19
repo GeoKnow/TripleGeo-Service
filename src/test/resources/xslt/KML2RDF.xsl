@@ -28,7 +28,7 @@
 	<xsl:include href="KML2WKT.xsl"/>
 	
 	<!-- EDIT: Compose the base URI for all RDF entities -->
-	<xsl:variable name='baseURI' select="concat('http://geodata.gov.gr/','id/')" />
+	<xsl:variable name='baseURI' select="concat('http://generator.geoknow.eu/','resource/')" />
 	
 	<!-- EDIT: Specify the geospatial ontology for RDF geometries -->
 	<xsl:variable name="typeWKT"><xsl:value-of select="concat('http://www.opengis.net/ont/geosparql#','wktLiteral')" /></xsl:variable>

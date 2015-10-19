@@ -14,13 +14,13 @@
 <!-- Last update: 7/4/2014                                                   -->
 <!-- ======================================================================= -->
 <xsl:stylesheet version="2.0" 
-    xmlns="http://www.opengis.net/gml/3.2"
+    xmlns="http://www.opengis.net/gml"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:geo="http://www.opengis.net/ont/geosparql#"
-    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:gml="http://www.opengis.net/gml"
     xmlns:ogr="http://ogr.maptools.org/"	>
 	
 	<xsl:strip-space elements="*"/>
@@ -30,7 +30,7 @@
 	<xsl:include href="GML2WKT.xsl"/>
 	
 	<!-- EDIT: Compose the base URI for all RDF entities -->
-	<xsl:variable name='baseURI' select="concat('http://geodata.gov.gr/','id/')" />
+	<xsl:variable name='baseURI' select="concat('http://generator.geoknow.eu/','resource/')" />
 	
 	<!-- EDIT: Compose the identifier of the resulting RDF dataset -->
 	<xsl:variable name="datasetid"><xsl:value-of select="*/@gml:id"/></xsl:variable>
@@ -68,7 +68,7 @@
 	</xsl:template>
 	
 	<!-- Template to handle each feature in the given GML -->	
-	<xsl:template match="ogr:oikodomika_tetragwna">     <!-- EDIT: Change this tag according to the given dataset -->
+	<xsl:template match="//*:featureMember">     <!-- EDIT: Change this tag according to the given dataset -->
 		<rdf:Description>
 		    <!-- Use an existing feature or GML identifier, otherwise generate a random one -->
 			<xsl:variable name='id' select="if (@gml:id) then @gml:id else generate-id()" />
@@ -79,7 +79,7 @@
 		
 			<!-- EDIT: Create 'rdf:label' element with a particular attribute -->
 			<xsl:element name='rdf:label'>
-				<xsl:value-of select='ogr:arot' />
+				<xsl:value-of select='*//NAME' />
 			</xsl:element>
 			
 			<!-- Create geometry RDF - GeoSPARQL specs -->
@@ -94,7 +94,7 @@
 							<xsl:value-of select='$typeWKT' />
 						</xsl:attribute>
 						<!-- EDIT: Change this geometry tag according to the given dataset -->
-						<xsl:value-of><xsl:apply-templates select='ogr:geometryProperty' /></xsl:value-of>
+						<xsl:value-of><xsl:apply-templates select='*//ogr:geometryProperty' /></xsl:value-of>
 					</xsl:element>
 				</rdf:Description>
 			</xsl:element>
