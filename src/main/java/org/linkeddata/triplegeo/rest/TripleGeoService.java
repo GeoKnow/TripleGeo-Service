@@ -155,10 +155,10 @@ public class TripleGeoService {
     } else if (config.getFormat().equals("TURTLE") || config.getFormat().equals("TTL")) {
       fileEXT = "ttl";
     } else {
-      return Response.status(Response.Status.BAD_REQUEST)
-          .entity("format not supported: " + config.getFormat())
-          .header("Access-Control-Allow-Origin", "*")
-          .header("Access-Control-Allow-Methods", "POST").build();
+      config.setFormat("RDF/XML");
+      fileEXT = "rdf";
+      config.setNsPrefix("gkg");
+      config.setNsURI("http://generator.geoknow.eu/resource/");
     }
 
     String uuid = UUID.randomUUID().toString();
@@ -173,6 +173,7 @@ public class TripleGeoService {
 
     config.setTmpDir(tmpDir.getPath());
     config.setOutputFile(resultDir + File.separator + uuid + "." + fileEXT);
+    log.debug(config.toString());
 
     try {
 
@@ -212,6 +213,11 @@ public class TripleGeoService {
       else if (config.getJob().equals("db")) {
         tg.DbToRdf(config, configFile);
 
+      } else {
+        return Response.status(Response.Status.BAD_REQUEST)
+            .entity("Job type not supported: " + config.getJob())
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Methods", "POST").build();
       }
       // delete temp dir
       tmpDir.delete();
@@ -291,6 +297,7 @@ public class TripleGeoService {
     while (it.hasNext()) {
       String q = it.next();
 
+      log.debug("query:" + q);
       HttpPost proxyMethod = new HttpPost(endpoint);
 
       ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
@@ -311,7 +318,8 @@ public class TripleGeoService {
       if (response.getStatusLine().getStatusCode() != 200) {
         throw new IOException("Could not insert data: " + endpoint + " "
             + response.getStatusLine().getReasonPhrase());
-      }
+      } else
+        log.debug(response.getStatusLine().toString());
 
     }
     httpClient.close();
