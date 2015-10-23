@@ -1,0 +1,12 @@
+Package: triplegeo-service
+Version: 0.3.0
+Source: triplegeo-service
+Architecture: all
+Maintainer: Alejandra Garcia-Rojas M <alejandra.garciarojas@ontos.com>
+Build-Depends: debhelper (>= 8.0.0)
+Depends: tomcat7
+Standards-Version: 3.9.4
+Homepage: https://github.com/GeoKnow/TripleGeo-Service
+Description: Web service for TripleGeo.
+ A web service for TripleGeo https://github.com/GeoKnow/TripleGeo
+ for transforming several shape formats in RDF standards
