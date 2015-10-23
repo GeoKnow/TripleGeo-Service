@@ -1,0 +1,2 @@
+release date=16:13 23.10.2015,version=1.2.0,urgency=low,by=Alejandra Garcia-Rojas M <alejandra.garciarojas@ontos.com>,distribution=dstack-nightly
+ * refatored to a REST service

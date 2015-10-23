@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>stack.linkeddata.org</groupId>
-	<artifactId>TripleGeo-Service</artifactId>
-	<version></version>
+	<artifactId>triplegeo-service</artifactId>
+	<version>0.3.0</version>
 	<packaging>war</packaging>
 	<name>tiplegeo-service</name>
 
@@ -192,7 +192,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-		</plugins>
+	
 		
 		<!-- For creating the debian package -->
       <plugin>
@@ -208,9 +208,9 @@
             <configuration>
               <deb>${project.build.directory}/${project.artifactId}_${project.version}_all.deb</deb>
               <changesOut>${project.build.directory}/${project.artifactId}_${project.version}_all.changes</changesOut>
-              <!-- <signPackage>true</signPackage>
+              <signPackage>true</signPackage>
               <signMethod>dpkg-sig</signMethod>
-              <signRole>builder</signRole> -->
+              <signRole>builder</signRole> 
               <dataSet>
                 <data>
                   <src>${project.build.directory}/${project.build.finalName}.war</src>
@@ -226,7 +226,7 @@
           </execution>
         </executions>
       </plugin>
-      
+      	</plugins>
 	</build>
 
 	<profiles>
