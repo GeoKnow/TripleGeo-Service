@@ -1,52 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>TripleGeo-Service</display-name>
-<!--   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-   <servlet>
-    <servlet-name>TripleGeo-Service</servlet-name>
-    <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoRun</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TripleGeo-Service</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>TripleGeoRun</servlet-name>
-    <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoRun</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>TripleGeoReview</servlet-name>
-    <servlet-class>org.linkeddata.stack.service.triplegeo.TripleGeoReview</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>LoadFile</servlet-name>
-    <servlet-class>org.linkeddata.stack.service.triplegeo.LoadFile</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ImportRDF</servlet-name>
-    <servlet-class>org.linkeddata.stack.service.triplegeo.ImportRDF</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TripleGeoRun</servlet-name>
-    <url-pattern>/TripleGeoRun</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>TripleGeoReview</servlet-name>
-    <url-pattern>/TripleGeoReview</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LoadFile</servlet-name>
-    <url-pattern>/LoadFile</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ImportRDF</servlet-name>
-    <url-pattern>/ImportRDF</url-pattern>
-  </servlet-mapping> -->
+
+<multipart-config>
+    <!-- Maximum file size to be uploaded 1024 * 1024 * 1024 </description> -->
+    <max-file-size>1073741824</max-file-size>
+    <max-request-size>1073741824</max-request-size>
+    <file-size-threshold>0</file-size-threshold>
+</multipart-config>
+
 </web-app>
