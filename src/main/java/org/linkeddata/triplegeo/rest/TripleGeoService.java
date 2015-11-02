@@ -155,8 +155,8 @@ public class TripleGeoService {
     } else if (config.getFormat().equals("TURTLE") || config.getFormat().equals("TTL")) {
       fileEXT = "ttl";
     } else {
-      config.setFormat("RDF/XML");
-      fileEXT = "rdf";
+      config.setFormat("TURTLE");
+      fileEXT = "ttl";
       config.setNsPrefix("gkg");
       config.setNsURI("http://generator.geoknow.eu/resource/");
     }
