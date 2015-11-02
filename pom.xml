@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>stack.linkeddata.org</groupId>
 	<artifactId>triplegeo-service</artifactId>
-	<version>0.3.2</version>
+	<version>0.3.3</version>
 	<packaging>war</packaging>
 	<name>tiplegeo-service</name>
 

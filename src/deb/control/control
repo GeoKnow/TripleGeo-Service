@@ -1,6 +1,6 @@
 Package: triplegeo-service
 Distribution: ldstack-nightly
-Version: 0.3.2
+Version: 0.3.3
 Source: triplegeo-service
 Architecture: all
 Section: web 

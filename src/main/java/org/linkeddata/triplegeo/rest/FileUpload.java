@@ -134,6 +134,7 @@ public class FileUpload {
     Gson gson = new Gson();
     String json = gson.toJson(uploaded);
 
-    return Response.ok().entity(json).build();
+    return Response.ok().entity(json).header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Methods", "POST").build();
   }
 }
