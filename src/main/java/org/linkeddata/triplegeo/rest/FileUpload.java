@@ -120,12 +120,14 @@ public class FileUpload {
         log.error(e);
         e.printStackTrace();
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage())
-            .build();
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Methods", "POST").build();
       } catch (Exception e) {
         log.error(e);
         e.printStackTrace();
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage())
-            .build();
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Methods", "POST").build();
       }
     }
 
